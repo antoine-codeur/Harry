@@ -20,3 +20,12 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(error => console.error('Error loading cards:', error));
     }
 });
+
+// document.getElementById('showCards').addEventListener('click', function() {
+//     fetch('src/core/action.php')
+//         .then(response => response.text())
+//         .then(html => {
+//             document.getElementById('cardsContainer').innerHTML = html;
+//         })
+//         .catch(error => console.error('Error loading cards:', error));
+// });

@@ -1,8 +1,3 @@
-<?php
-$jsonData = file_get_contents('src/json/Hogwarts.json');
-$characters = json_decode($jsonData, true);
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -17,16 +12,13 @@ $characters = json_decode($jsonData, true);
         <p>Découvrez les personnages emblématiques de l'univers de Harry Potter.</p>
     </header>
     <main>
-        <div class="cards-container">
-            <?php foreach ($characters as $characterTable): ?>
-                <?php 
-                    $characterName = $characterTable['name'];
-                    $characterHouse = $characterTable['house'];
-                    $characterImage = $characterTable['image'];
-                    include('asset/template/character.php'); 
-                ?>
-            <?php endforeach; ?>
+        <div class="button-container">
+            <button id="showCards">Afficher les cartes</button>
+        </div>
+        <div id="cardsContainer" class="cards-container">
+            <!-- affichage des cartes -->
         </div>
     </main>
+    <script src="src/script/AJAX_cards.js"></script>
 </body>
 </html>

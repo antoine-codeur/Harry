@@ -54,6 +54,34 @@ header {
     overflow: hidden;
 }
 
+.button-container {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+button#showCards {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button#showCards:hover {
+    background-color: #0056b3;
+}
+
+button#showCards:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.5);
+}
+
+
+
 @media (min-width: 1024px) {
     .character-card {
         width: calc(25% - 20px);

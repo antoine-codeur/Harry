@@ -23,4 +23,3 @@ foreach ($filteredCharacters as $character) {
     include('../../asset/template/character.php');
 
 }
-

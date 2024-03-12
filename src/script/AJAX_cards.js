@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('houseFilter').addEventListener('change', function() {
+    document.querySelector('#houseFilter').addEventListener('change', function() {
         loadCards(this.value);
     });
 
-    document.getElementById('showCards').addEventListener('click', function() {
+    document.querySelector('#showCards').addEventListener('click', function() {
     
-        document.getElementById('houseFilter').value = 'all';
+        document.querySelector('#houseFilter').value = 'all';
         loadCards('all');
     });
     
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
         fetch(url)
             .then(response => response.text())
             .then(html => {
-                document.getElementById('cardsContainer').innerHTML = html;
+                document.querySelector('#cardsContainer').innerHTML = html;
             })
             .catch(error => console.error('Error loading cards:', error));
     }

@@ -1,21 +1,6 @@
 <?php
-$characters = [
-    [
-        'name' => 'Harry Potter',
-        'house' => 'Gryffindor',
-        'image' => 'https://ik.imagekit.io/hpapi/harry.jpg'
-    ],
-    [
-        'name' => 'Hermione Granger',
-        'house' => 'Gryffindor',
-        'image' => 'https://ik.imagekit.io/hpapi/hermione.jpeg'
-    ],
-    [
-        'name' => 'Ron Weasley',
-        'house' => 'Gryffindor',
-        'image' => 'https://ik.imagekit.io/hpapi/ron.jpg'
-    ]
-];
+$jsonData = file_get_contents('src/json/Hogwarts.json');
+$characters = json_decode($jsonData, true);
 ?>
 
 <!DOCTYPE html>

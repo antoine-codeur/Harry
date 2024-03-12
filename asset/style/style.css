@@ -26,20 +26,39 @@ header {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     width: calc(33.333% - 20px);
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .character-card img {
-    width: 200px;
+    display: block;
+    width: 100%;
+    max-width: 200px;
     height: auto;
+    margin: 0 auto;
+
 }
+
+.character-card {
+    background: #fff;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: calc(33.333% - 20px);
+    text-align: center;
+
+}
+
+.character-card .img-container {
+    height: 200px;
+    overflow: hidden;
+}
+
 
 @media (min-width: 1024px) {
     .character-card {
         width: calc(25% - 20px);
         margin: 10px;
-    }
-    .character-card img {
-        width: 200px;
     }
 }
 
@@ -47,16 +66,10 @@ header {
     .character-card {
         width: calc(50% - 20px);
     }
-    .character-card img {
-        width: 40vw;
-    }
 }
 
 @media (max-width: 480px) {
     .character-card {
-        width: 100%;
-    }
-    .character-card img {
         width: 100%;
     }
 }

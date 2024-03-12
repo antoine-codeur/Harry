@@ -15,9 +15,7 @@
         <div class="button-container">
             <button id="showCards">Afficher les cartes</button>
         </div>
-        <div id="cardsContainer" class="cards-container">
-            <!-- affichage des cartes -->
-        </div>
+        <div id="cardsContainer" class="cards-container"></div>
     </main>
     <script src="src/script/AJAX_cards.js"></script>
 </body>

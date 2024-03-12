@@ -13,15 +13,16 @@
     </header>
     <main>
         <div class="button-container">
-        <select id="houseFilter">
-            <option value="all">Toutes les Maisons</option>
-            <option value="Gryffindor">Gryffindor</option>
-            <option value="Hufflepuff">Hufflepuff</option>
-            <option value="Ravenclaw">Ravenclaw</option>
-            <option value="Slytherin">Slytherin</option>
-        </select>
+            <select id="houseFilter">
+                <option value="" selected disabled>--Filter--</option>
+                <option value="all">Toutes les Maisons</option>
+                <option value="Gryffindor">Gryffindor</option>
+                <option value="Hufflepuff">Hufflepuff</option>
+                <option value="Ravenclaw">Ravenclaw</option>
+                <option value="Slytherin">Slytherin</option>
+            </select>
 
-        <button id="showCards">Afficher les cartes</button>
+            <button id="showCards">Afficher les cartes</button>
         </div>
         <div id="cardsContainer" class="cards-container">
             

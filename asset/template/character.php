@@ -1,4 +1,4 @@
-<div class="character-card">
+<div class="character-card <?php echo $characterHouse; ?>">
     <h2><?php echo $characterName; ?></h2>
     <div class="img-container">
         <img src="<?php echo $characterImage; ?>" alt="Portait de <?php echo $characterName; ?>" loading="lazy">

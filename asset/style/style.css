@@ -1,27 +1,32 @@
 :root {
     /* Définition des variables */
-    --background-color: #f4f4f4;
+    --background-color: #555;
     --header-background-color: #333;
     --text-color: #fff;
+    --dark-text-color: #333;
     --card-background-color: #fff;
     --card-shadow: 0 2px 4px rgba(0,0,0,0.1);
     --primary-color: #007bff;
     --primary-color-hover: #0056b3;
     --focus-shadow: 0 0 0 2px rgba(0,123,255,0.5);
 }
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background: var(--background-color);
 }
-
 header {
     background: var(--header-background-color);
     color: var(--text-color);
     padding: 20px;
     text-align: center;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    font-size: medium;
 }
 
 .cards-container {
@@ -32,35 +37,30 @@ header {
 }
 
 .character-card {
-    background: var(--card-background-color);
+    padding: 10px;
     margin: 10px;
-    padding: 20px;
-    box-shadow: var(--card-shadow);
-    width: calc(33.333% - 20px);
-    text-align: center;
-    position: relative;
+    border-radius: 10px;
     overflow: hidden;
+    background: var(--card-background-color);
+    box-shadow: var(--card-shadow);
+    max-width: 240px;
+    color: var;
+    transition: transform 0.1s ease;
 }
 
+
+.character-card:hover {
+    transform: translateY(-8px);
+}
 .character-card img {
     display: block;
     width: 100%;
-    max-width: 200px;
+    max-width: 165px;
     height: auto;
-    margin: 0 auto;
-}
-.character-card {
-    background: #fff;
-    margin: 10px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);    
-    width: calc(25% - 20px);
-    text-align: center;
-
 }
 
 .character-card .img-container {
-    max-height: 200px;
+    max-height: 165px;
     overflow: hidden;
 }
 
@@ -89,23 +89,4 @@ button#showCards:hover {
 button#showCards:focus {
     outline: none;
     box-shadow: var(--focus-shadow);
-}
-
-@media (max-width: 1060px) {
-    .character-card {
-        width: calc(50% - 60px);
-        margin: 10px;
-    }
-}
-
-@media (max-width: 768px) {
-    .character-card {
-        width: calc(50% - 20px);
-    }
-}
-
-@media (max-width: 480px) {
-    .character-card {
-        width: 100%;
-    }
 }

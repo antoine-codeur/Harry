@@ -9,13 +9,23 @@
 <body>
     <header>
         <h1>Personnages de Harry Potter</h1>
-        <p>Découvrez les personnages emblématiques de l'univers de Harry Potter.</p>
+        <p>Découvrez les personnages emblématiques de l'univers de Hogwarts.</p>
     </header>
     <main>
         <div class="button-container">
-            <button id="showCards">Afficher les cartes</button>
+        <select id="houseFilter">
+            <option value="all">Toutes les Maisons</option>
+            <option value="Gryffindor">Gryffindor</option>
+            <option value="Hufflepuff">Hufflepuff</option>
+            <option value="Ravenclaw">Ravenclaw</option>
+            <option value="Slytherin">Slytherin</option>
+        </select>
+
+        <button id="showCards">Afficher les cartes</button>
         </div>
-        <div id="cardsContainer" class="cards-container"></div>
+        <div id="cardsContainer" class="cards-container">
+            
+        </div>
     </main>
     <script src="src/script/AJAX_cards.js"></script>
 </body>

@@ -18,16 +18,15 @@ $characters = json_decode($jsonData, true);
     </header>
     <main>
         <div class="cards-container">
-            <?php foreach ($characters as $character): ?>
+            <?php foreach ($characters as $characterTable): ?>
                 <?php 
-                    $characterName = $character['name'];
-                    $characterHouse = $character['house'];
-                    $characterImage = $character['image'];
+                    $characterName = $characterTable['name'];
+                    $characterHouse = $characterTable['house'];
+                    $characterImage = $characterTable['image'];
                     include('asset/template/character.php'); 
                 ?>
             <?php endforeach; ?>
         </div>
-
     </main>
 </body>
 </html>

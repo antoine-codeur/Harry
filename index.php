@@ -18,6 +18,16 @@
                 <h2>Harry Potter</h2>
                 <p>Gryffindor</p>
             </div>
+            <div class="character-card">
+                <img src="https://ik.imagekit.io/hpapi/hermione.jpeg" alt="Hermione Granger">
+                <h2>Hermione Granger</h2>
+                <p>Gryffindor</p>
+            </div>
+            <div class="character-card">
+                <img src="https://ik.imagekit.io/hpapi/ron.jpg" alt="Ron Weasley">
+                <h2>Ron Weasley</h2>
+                <p>Gryffindor</p>
+            </div>
         </div>
     </main>
 </body>

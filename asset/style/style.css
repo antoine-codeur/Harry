@@ -81,8 +81,6 @@ button#showCards:focus {
     box-shadow: 0 0 0 2px rgba(0,123,255,0.5);
 }
 
-
-
 @media (min-width: 1024px) {
     .character-card {
         width: calc(25% - 20px);

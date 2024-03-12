@@ -1,3 +1,23 @@
+<?php
+$characters = [
+    [
+        'name' => 'Harry Potter',
+        'house' => 'Gryffindor',
+        'image' => 'https://ik.imagekit.io/hpapi/harry.jpg'
+    ],
+    [
+        'name' => 'Hermione Granger',
+        'house' => 'Gryffindor',
+        'image' => 'https://ik.imagekit.io/hpapi/hermione.jpeg'
+    ],
+    [
+        'name' => 'Ron Weasley',
+        'house' => 'Gryffindor',
+        'image' => 'https://ik.imagekit.io/hpapi/ron.jpg'
+    ]
+];
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -13,22 +33,16 @@
     </header>
     <main>
         <div class="cards-container">
-            <div class="character-card">
-                <img src="https://ik.imagekit.io/hpapi/harry.jpg" alt="Harry Potter">
-                <h2>Harry Potter</h2>
-                <p>Gryffindor</p>
-            </div>
-            <div class="character-card">
-                <img src="https://ik.imagekit.io/hpapi/hermione.jpeg" alt="Hermione Granger">
-                <h2>Hermione Granger</h2>
-                <p>Gryffindor</p>
-            </div>
-            <div class="character-card">
-                <img src="https://ik.imagekit.io/hpapi/ron.jpg" alt="Ron Weasley">
-                <h2>Ron Weasley</h2>
-                <p>Gryffindor</p>
-            </div>
+            <?php foreach ($characters as $character): ?>
+                <?php 
+                    $characterName = $character['name'];
+                    $characterHouse = $character['house'];
+                    $characterImage = $character['image'];
+                    include('asset/template/character.php'); 
+                ?>
+            <?php endforeach; ?>
         </div>
+
     </main>
 </body>
 </html>

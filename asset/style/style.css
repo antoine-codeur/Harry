@@ -29,7 +29,7 @@ header {
 }
 
 .character-card img {
-    max-width: 100%;
+    width: 200px;
     height: auto;
 }
 
@@ -38,16 +38,25 @@ header {
         width: calc(25% - 20px);
         margin: 10px;
     }
+    .character-card img {
+        width: 200px;
+    }
 }
 
 @media (max-width: 768px) {
     .character-card {
         width: calc(50% - 20px);
     }
+    .character-card img {
+        width: 40vw;
+    }
 }
 
 @media (max-width: 480px) {
     .character-card {
+        width: 100%;
+    }
+    .character-card img {
         width: 100%;
     }
 }

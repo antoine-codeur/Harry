@@ -1,13 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('#houseFilter').addEventListener('change', function() {
-        loadCards(this.value);
+        const houseFilter = this.value;
+        const genderFilter = document.querySelector('#genderFilter').value;
+        loadCards(houseFilter, genderFilter);
+    });
+    document.querySelector('#genderFilter').addEventListener('change', function() {
+        const genderFilter = this.value;
+        const houseFilter = document.querySelector('#houseFilter').value;
+        loadCards(houseFilter, genderFilter);
     });
     document.querySelector('#showCards').addEventListener('click', function() {
         document.querySelector('#houseFilter').value = 'all';
-        loadCards('all');
+        document.querySelector('#genderFilter').value = 'all';
+        loadCards('all', 'all');
     });
-    function loadCards(filter) {
-        const url = `src/core/action.php?house=${filter}`;
+    function loadCards(houseFilter, genderFilter) {
+        const url = `src/core/action.php?house=${houseFilter}&gender=${genderFilter}`;
         fetch(url)
             .then(response => response.text())
             .then(html => {
@@ -16,12 +24,3 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(error => console.error('Error loading cards:', error));
     }
 });
-
-// document.getElementById('showCards').addEventListener('click', function() {
-//     fetch('src/core/action.php')
-//         .then(response => response.text())
-//         .then(html => {
-//             document.getElementById('cardsContainer').innerHTML = html;
-//         })
-//         .catch(error => console.error('Error loading cards:', error));
-// });

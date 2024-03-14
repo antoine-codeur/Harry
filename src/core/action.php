@@ -2,24 +2,19 @@
 $jsonData = file_get_contents('../json/Hogwarts.json');
 $characters = json_decode($jsonData, true);
 
-$houseFilter = isset($_GET['house']) ? $_GET['house'] : 'all';
+$houseFilter = $_GET['house'] ?? 'all';
+$genderFilter = $_GET['gender'] ?? 'all';
 
-$filteredCharacters = [];
-if ($houseFilter !== 'all') {
-    foreach ($characters as $character) {
-    
-        if (isset($character['house']) && $character['house'] === $houseFilter) {
-            $filteredCharacters[] = $character;
-        }
-    }
-} else {
-    $filteredCharacters = $characters;
-}
+$filteredCharacters = array_filter($characters, function ($character) use ($houseFilter, $genderFilter) {
+    $matchesHouse = $houseFilter === 'all' || (isset($character['house']) && $character['house'] === $houseFilter);
+    $matchesGender = $genderFilter === 'all' || (isset($character['gender']) && $character['gender'] === $genderFilter);
+    return $matchesHouse && $matchesGender;
+});
 
 foreach ($filteredCharacters as $character) {
     $characterName = $character['name'];
-    $characterHouse = $character['house'] ?? 'Unknown'; 
-    $characterImage = $character['image'];
+    $characterHouse = $character['house'] ?? 'Unknown';
+    $characterGender = $character['gender'] ?? 'Unknown';
+    $characterImage = $character['image'] ?? 'default.jpg'; // Assurez-vous de gérer les cas où l'image n'existe pas
     include('../../asset/template/character.php');
-
 }

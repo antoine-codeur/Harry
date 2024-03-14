@@ -26,7 +26,6 @@
                 <option value="all">Toutes les genres</option>
                 <option value="male">Homme</option>
                 <option value="female">Femme</option>
-                <option value="other">Autres</option>
             </select>
             <button id="showCards">Afficher les cartes</button>
             <select id="sortOrder">

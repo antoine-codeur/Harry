@@ -5,4 +5,5 @@
     </div>
     <p><?php echo $characterGender; ?></p>
     <p><?php echo $characterHouse; ?></p>
+    <p><?php echo $characterDateOfBirth; ?></p>
 </div>

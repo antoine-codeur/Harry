@@ -2,8 +2,10 @@ document.addEventListener('DOMContentLoaded', function() {
     let houseFilter = 'all';
     let genderFilter = 'all';
     let sortOrder = 'nameAsc';
+    let searchQuery = '';
+    
     function loadCards() {
-        const url = `src/core/action.php?house=${houseFilter}&gender=${genderFilter}&sort=${sortOrder}`;
+        const url = `src/core/action.php?house=${houseFilter}&gender=${genderFilter}&sort=${sortOrder}&search=${encodeURIComponent(searchQuery)}`;
         fetch(url)
             .then(response => response.text())
             .then(html => {
@@ -21,6 +23,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     document.querySelector('#sortOrder').addEventListener('change', function() {
         sortOrder = this.value;
+        loadCards();
+    });
+    document.querySelector('#searchBar').addEventListener('input', function() {
+        searchQuery = this.value.toLowerCase();
         loadCards();
     });
     document.querySelector('#showCards').addEventListener('click', function() {

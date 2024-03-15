@@ -1,7 +1,6 @@
 :root {
-    /* Définition des variables */
     --background-color: #555;
-    --background-image: url('http://localhost:8888/Harry/asset/image/grand mystical academy.jpeg');
+    --background-image: url('http://localhost:8888/Partie%20PHP/Harry/asset/image/grand mystical academy.jpeg');
     --background-style: no-repeat top center / cover;
     --header-background-color: #463c35;
     --header-accent-color: #d4af37;
@@ -21,24 +20,27 @@ body {
 }
 
 header {
-    font-family: 'Roboto', sans-serif;
-    background: var(--header-background-color);
-    background-size: cover;
-    color: var(--text-color);
+    background-color: #483D8B;
+    color: #F8F8FF;
     padding: 20px;
     text-align: center;
-    border-bottom: 2px solid var(--header-accent-color);
+    border-bottom: 3px solid #F8F8FF;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
 header h1 {
-    font-family: 'Merriweather', serif;
-    font-size: 2.5em;
-    color: var(--header-accent-color);
+    font-family: 'Cormorant Garamond', serif;
+    margin: 0;
+    padding-bottom: 10px;
+    font-weight: 600;
 }
 
 header p {
-    font-size: 1.2em;
-    margin-top: 10px;
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    font-size: 1.1em;
 }
 
 main {
@@ -52,6 +54,31 @@ h2 {
     font-size: medium;
 }
 
+.search-container {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60vw;
+}
+
+#searchBar {    
+    width: 100%;
+    height: 25px;
+    border-radius: 25px;
+    color: wheat;
+    background-color: #333;
+}
+
+#searchBar[type="text"]{
+    padding-left: 20px;
+    font-weight: 700;
+}
+
+#searchBar::placeholder {
+    color: whitesmoke;
+}
 .cards-container {
     display: flex;
     justify-content: center;
@@ -86,10 +113,10 @@ h2 {
     background-image: linear-gradient(to top right, #776700, #303030, #FEDD00);
 }
 
-
 .character-card:hover {
     transform: translateY(-8px);
 }
+
 .character-card img {
     display: block;
     width: 100%;

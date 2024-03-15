@@ -6,10 +6,17 @@ $houseFilter = $_GET['house'] ?? 'all';
 $genderFilter = $_GET['gender'] ?? 'all';
 $sortOrder = $_GET['sort'] ?? 'nameAsc';
 
-$filteredCharacters = array_filter($characters, function ($character) use ($houseFilter, $genderFilter) {
+$searchQuery = strtolower($_GET['search'] ?? '');
+
+$filteredCharacters = array_filter($characters, function ($character) use ($houseFilter, $genderFilter, $searchQuery) {
     $matchesHouse = $houseFilter === 'all' || (isset($character['house']) && $character['house'] === $houseFilter);
     $matchesGender = $genderFilter === 'all' || (isset($character['gender']) && $character['gender'] === $genderFilter);
-    return $matchesHouse && $matchesGender;
+
+    $matchesSearch = empty($searchQuery) || (
+        stripos($character['name'], $searchQuery) !== false ||
+        (!empty($character['alternate_names']) && array_search(strtolower($searchQuery), array_map('strtolower', $character['alternate_names'])) !== false)
+    );
+    return $matchesHouse && $matchesGender && $matchesSearch;
 });
 
 usort($filteredCharacters, function($a, $b) use ($sortOrder) {

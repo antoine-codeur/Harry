@@ -12,6 +12,9 @@
         <p>Découvrez les personnages emblématiques de l'univers de Hogwarts.</p>
     </header>
     <main>
+        <div class="search-container">
+            <input type="text" id="searchBar" placeholder="Recherchez un personnage...">
+        </div>
         <div class="button-container">
             <select id="houseFilter">
                 <option value="" selected disabled>--Filter Maisons--</option>
